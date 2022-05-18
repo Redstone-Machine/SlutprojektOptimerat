@@ -1,0 +1,120 @@
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    margin: clamp(1rem,2vw,3rem);
+    margin-top: 0px;
+}
+.remove-picture {
+    display: none;
+}
+.Slider-pictures {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 10vw 1fr 10vw;
+    /* margin-inline: clamp(0px,5rem,3vw); */
+    margin-inline: max(20vw - 10rem, 0px);
+    grid-template-areas:
+    "lfbn pic rhbn";
+    margin-top: 1rem;
+}
+#left-button {
+    grid-area: lfbn;
+    transform: rotate(270deg);
+}
+#right-button {
+    grid-area: rhbn;
+    transform: rotate(90deg);
+}
+.ExempelSlide {
+    width: 100%;
+    height: auto;
+    border-radius: 3.5rem;
+}
+.ExempelSlide-position {
+    grid-area: pic;
+}
+.slider-button {
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+    width: 70%;
+    margin: auto;
+}
+.slider-button img {
+    width: 100%;
+    height: auto;
+}
+.exempel-text {
+text-align: center;
+}
+.button-div {
+    position: relative;
+}
+.buttons-div {
+    position: absolute;
+}
+@media (hover: hover) {
+    .buttons-div:hover {
+    transform: scale(1.03);
+    transition: none 0.1s ease-in;
+    transition-property: transform;
+    }
+    .ExempelSlide {
+        box-shadow: none;
+        transition: box-shadow .3s;
+    }
+    .ExempelSlide:hover {
+        box-shadow: 0 0 30px rgba(33,33,33,0.5); 
+}
+}
+@media screen and (max-width: 600px) {
+    .main-grid {
+        margin-top: clamp(1rem,2vw,3rem);
+    }
+}
+img {
+    transition: none 0.1s ease-in;
+    transition-property: transform;
+}
+.vmindre {
+    transform: scale(0.8);
+}
+.vmindrecir {
+    transform: scale(0.98);
+}
+.hmindre {
+    transform: scale(0.8);
+}
+.hmindrecir {
+    transform: scale(0.98);
+}
+@media screen and (max-width: 600px) {
+    .ExempelSlide {
+        border-radius: 0px;
+    }
+    .Slider-pictures {
+        display: block;
+        position: relative;
+        margin-inline: 0px;
+    }
+    .slider-button {
+        position: absolute;
+        width: calc(1.5rem + 10vw);
+        top: 50%;
+    }
+    #left-button {
+        transform: translateY(-50%) rotate(270deg);
+        left: 0.5rem;
+    }
+    #right-button {
+        transform: translateY(-50%) rotate(90deg);
+        right: 0.5rem;
+    }
+    .main-grid {
+        margin-inline: 0px;
+    }
+    #under-ex {
+        margin-inline: 1.8rem;
+    }
+}
